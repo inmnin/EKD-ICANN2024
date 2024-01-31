@@ -6,7 +6,6 @@ import math
 
 
 class MINLMLoss(nn.Module):
-    """PyTorch version of `ViTKD: Practical Guidelines for ViT feature knowledge distillation` """
 
     def __init__(self,
                  student_dims,
@@ -20,7 +19,8 @@ class MINLMLoss(nn.Module):
                  A_r: int,
                  alpha,
                  beta,
-                 gama
+                 gama,
+                 train_type
                  ):
         super(MINLMLoss, self).__init__()
 
@@ -41,7 +41,12 @@ class MINLMLoss(nn.Module):
         self.L = L
         self.M = M
         self.A_r = A_r
-        self.relations = {(1,2):1/2 , (3,3):1/2}
+        
+        if train_type == "minlmv1":
+            self.relations = {(1,2):1/2 , (3,3):1/2}
+            
+        if train_type == "minlmv2":
+            self.relations = {(1,1):1/3 ,(2,2):1/3, (3,3):1/3}
         # Make sure not updating teacher
         for param in self.teacher.parameters():
             param.requires_grad = False

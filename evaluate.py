@@ -1,5 +1,7 @@
 import torch
 
+
+# Validation on a test set
 def evaluate(model, val_dataloader, device):
     model.eval()
     val_accuracy = 0
@@ -9,6 +11,7 @@ def evaluate(model, val_dataloader, device):
             attention_mask = batch['attention_mask'].to(device)
             labels = batch['labels'].to(device)
 
+            #Don't get hidden status
             outputs = model(input_ids=input_ids, attention_mask=attention_mask,output_hidden_states=False)
             logits = outputs.logits
             preds = torch.argmax(logits, dim=1)

@@ -4,24 +4,19 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 def Normalized_Mse_Loss(x_s, x_t):
-    # 计算 L2 范数
     norm_x_s = torch.norm(x_s, p=2, dim=2, keepdim=True)
     norm_x_t = torch.norm(x_t, p=2, dim=2, keepdim=True)
 
-    # 各自除以 L2 范数
     x_s_normalized = x_s / norm_x_s
     x_t_normalized = x_t / norm_x_t
 
-    # 计算平方差
     squared_diff = (x_s_normalized - x_t_normalized) ** 2
 
-    # 计算平均值
     mse = torch.sum(squared_diff)
     return mse
 
 
 class PKDLoss(nn.Module):
-    """PyTorch version of `ViTKD: Practical Guidelines for ViT feature knowledge distillation` """
 
     def __init__(self,
                  student_dims,
@@ -48,7 +43,6 @@ class PKDLoss(nn.Module):
             preds_T(List): [B*N*D,...,B*N*D], teacher's feature map
         """
 
-        #学生与老师的特征
         x_s = preds_S
         x_t = preds_T
 

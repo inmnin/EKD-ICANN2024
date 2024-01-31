@@ -5,7 +5,6 @@ import torch.nn.functional as F
 
 
 class TINYLoss(nn.Module):
-    """PyTorch version of `ViTKD: Practical Guidelines for ViT feature knowledge distillation` """
 
     def __init__(self,
                  student_dims,
@@ -30,13 +29,7 @@ class TINYLoss(nn.Module):
                 student_attentions,
                 teacher_attentions
     ):
-        """Forward function.
-        Args:
-            preds_S(List): [B*N*D,...,B*N*D], student's feature map
-            preds_T(List): [B*N*D,...,B*N*D], teacher's feature map
-        """
-
-        #学生与老师的特征
+        
         x_s = preds_S
         x_t = preds_T
 
