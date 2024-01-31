@@ -36,13 +36,13 @@ if __name__ == '__main__':
     MAX_SEQ_LEN = max_len_dict[data_set_type]
 
     for ALPHA_VITKD_item in ALPHA_VITKD:
-        seed_value = 2020  # 设定随机数种子
+        seed_value = 2020  
         np.random.seed(seed_value)
         random.seed(seed_value)
-        os.environ['PYTHONHASHSEED'] = str(seed_value)  # 为了禁止hash随机化，使得实验可复现。
-        torch.manual_seed(seed_value)  # 为CPU设置随机种子
-        torch.cuda.manual_seed(seed_value)  # 为当前GPU设置随机种子（只用一块GPU）
-        torch.cuda.manual_seed_all(seed_value)  # 为所有GPU设置随机种子（多块GPU）
+        os.environ['PYTHONHASHSEED'] = str(seed_value)  
+        torch.manual_seed(seed_value)  
+        torch.cuda.manual_seed(seed_value)  
+        torch.cuda.manual_seed_all(seed_value)  
         torch.backends.cudnn.deterministic = True
 
         
