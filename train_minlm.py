@@ -37,7 +37,6 @@ def train_minlm(description="minilm",
           LR=0.00001,
           EPOCHS=40,
           NUM_LABELS=2,
-          # 蒸馏损失相关参数
           ALPHA_VITKD=0.00001,
           BETA_VITKD=0,
           GAMA_VITKD=0.3,
@@ -54,13 +53,13 @@ def train_minlm(description="minilm",
           data_set_type="hotel",
           ):
     torch.cuda.empty_cache()
-    # 老师模型
+    
     print(data_set_type)
     tokenizer = BertTokenizer.from_pretrained("./Teacher_Model/" + data_set_type + "_Model/")
     teacher_model = BertForSequenceClassification.from_pretrained(
         "./Teacher_Model/" + data_set_type + "_Model/", num_labels=NUM_LABELS)
 
-    # 学生模型
+    
     student_model = BertConfig(hidden_size=312, num_hidden_layers=8,
                                num_attention_heads=4)
     student_model = BertForSequenceClassification(config=student_model)
@@ -87,29 +86,28 @@ def train_minlm(description="minilm",
                             )
         RESULT_PATH = "result/" + data_set_type + '/MINLM/'
 
-    # 定义设备，模型加载到设备
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     student_model = student_model.to(device)
     teacher_model = teacher_model.to(device)
     add_loss = add_loss.to(device)
 
-    # 定义优化器和损失函数
+
     combined_params = list(add_loss.student.parameters())
     optimizer = torch.optim.AdamW(combined_params, lr=LR)
     loss_function = torch.nn.CrossEntropyLoss()
 
-    # 训练集
     train_dataset = Bert_Dataset(
         TRAIN_PATH, tokenizer, MAX_SEQ_LEN)
     train_dataloader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
 
-    # 测试集
+    
     val_dataset = Bert_Dataset(TEST_PATH, tokenizer, MAX_SEQ_LEN)
     val_dataloader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=True)
 
-    # 开始训练循环
+    
     epochs = EPOCHS
-    # 统计预测集上的准确率
+    
     val_accuracy = []
 
     print("training start!!!")
@@ -131,13 +129,13 @@ def train_minlm(description="minilm",
 
             loss = add_loss(input_ids=input_ids, attention_mask=attention_mask,labels=labels)
 
-            # 反向传播和优化
+            
             loss.backward()
             optimizer.step()
 
             total_loss += loss
 
-            # 只显示学生的bar即可
+            
             progress_bar.set_postfix({'training_loss': '{:.3f}'.format(loss.item())})
         val_accuracy.append(evaluate(add_loss.student, val_dataloader, device))
         avg_train_loss = total_loss / len(train_dataloader)
@@ -160,7 +158,7 @@ def train_minlm(description="minilm",
                  "T_KD_LAYERS": T_KD_LAYERS,
                  }
     val_accuracy.append(hyper_dic)
-    # 保存训练后模型结果
+    
     path = RESULT_PATH
     result_index = get_result_index(path)
 
