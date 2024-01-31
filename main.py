@@ -5,28 +5,21 @@ import os
 from train import train
 
 if __name__ == '__main__':
-    """
-    以下是需要调整的参数，别的都不需要改，直接运行脚本即可
-    """
 
-    description = "这里可以给本次实验加一些描述"
+
+    description = ""
     EPOCHS = 40
 
-    # 蒸馏损失相关参数
     ALPHA_VITKD = [3,0.3,0.03,0.003,0.0003,0.00003,0.000003]
 
     #train_type = cae,mae, pkd_skip , mae_first, mae_last,kd
     train_type = "mae_last"
 
-    #数据集有以下几种类型：hotel , shopping , waimai , movie
     data_set_type = "shopping"
 
     #注意力模块的参数
     REGRESSOER_DEPT = 3
     REGRESSOER_NUM_HEADS = 8
-    """
-    """
-
 
 
     BATCH_SIZE = 32
@@ -52,14 +45,14 @@ if __name__ == '__main__':
         torch.cuda.manual_seed_all(seed_value)  # 为所有GPU设置随机种子（多块GPU）
         torch.backends.cudnn.deterministic = True
 
-        #训练
+        
         train(description = description,
         MAX_SEQ_LEN = MAX_SEQ_LEN,
         BATCH_SIZE = BATCH_SIZE,
         LR = LR,
         EPOCHS = EPOCHS,
         NUM_LABELS = NUM_LABELS,
-        # 蒸馏损失相关参数
+        
         ALPHA_VITKD = ALPHA_VITKD_item,
         BETA_VITKD = BETA_VITKD,
         MASK_RATE = MASK_RATE,
