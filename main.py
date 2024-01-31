@@ -21,8 +21,8 @@ if __name__ == '__main__':
     #The train_type can be one of the following:   makd, pkd_skip, pkd_first, pkd_last, kd, baseline, tiny, minlmv1, or minlmv2
     train_type = "makd"
 
-    #The datasets are of the following types:    hotel, shopping, waimai, movie, data4
-    data_set_type = "movie"
+    #The datasets are of the following types:    hotel, shopping, takeaways, movie, data4
+    data_set_type = "takeaways"
 
     
     MASK_RATE = 0.5
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     T_KD_LAYERS = [0, 3, 6, 9, 12]
     S_KD_LAYERS = [0, 2, 4, 6, 8]
 
-    max_len_dict = {"hotel":150,"waimai":70,"shopping":150,"movie":100,"data4":120}
+    max_len_dict = {"hotel":150,"takeaways":70,"shopping":150,"movie":100,"data4":120}
     MAX_SEQ_LEN = max_len_dict[data_set_type]
     
 
