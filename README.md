@@ -1,2 +1,2 @@
 # MAKD
-pytorch implementation of MAKD
+pytorch implementation of MAKD.
