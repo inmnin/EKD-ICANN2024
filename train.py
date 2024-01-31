@@ -61,7 +61,7 @@ data_set_type = "hotel",
     print(data_set_type)
     tokenizer = BertTokenizer.from_pretrained("./Teacher_Model/"+data_set_type+"_Model/")
     teacher_model = BertForSequenceClassification.from_pretrained(
-        "./Teacher_Model/"+data_set_type+"2_Model/", num_labels=NUM_LABELS)
+        "./Teacher_Model/"+data_set_type+"_Model/", num_labels=NUM_LABELS)
 
     # 学生模型
     student_model = BertConfig(hidden_size=312, num_hidden_layers=8,
