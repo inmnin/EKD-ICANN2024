@@ -33,18 +33,13 @@ The teacher's weights fine-tuned for a particular dataset will be saved in the c
 
 
 # 2. run MAKD method in main.py:
-In experimenting with the MAKD method, please change **train_type** to **"makd"** (or other methods of comparison), and **data_set_type** to the corresponding dataset name (movie,takeaways,data4,shopping or hotel) in main.py. Then set the epochs as **15**, and set the **ALPHA** on different datasets to the best parameters we provided: 
+In experimenting with the MAKD method, please set **data_set_type** to the corresponding dataset name (movie,takeaways,data4,shopping or hotel) in main.py. Then set the **ALPHA** on different datasets to the best parameters we provided: 
 |movie|takeaways|data4|shopping|hotel|
 |:---|:---|:---|:---|:---|
 |5|3000|1|2.5|0.00003|
 ```
-    EPOCHS = 15
-
     #ALPHA is the loss weight corresponding to the MAKD loss in the MAKD method
     ALPHA = 5
-    
-    #The train_type can be one of the following:    makd, pkd_skip, kd, baseline, tiny, minlmv1, or minlmv2
-    train_type = "makd"
 
     #The datasets are of the following types:    movie, data4, takeaways, shopping or hotel
     data_set_type = "movie"
