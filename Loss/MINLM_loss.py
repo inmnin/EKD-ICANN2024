@@ -89,9 +89,6 @@ class MINLMLoss(nn.Module):
     ):
         """Compute KL divergence loss of teacher and student on one relation.
 
-        This function is a vectorized version of formula (6) in the MiniLM paper.
-        The paper does not handle batching and attention mask.
-
         Arguments:
             rel_T: a self attention relation of the teacher (batch_size, A_r, seq_len, seq_len)
             rel_S: a self attention relation of the student (batch_size, A_r, seq_len, seq_len)
@@ -99,16 +96,11 @@ class MINLMLoss(nn.Module):
         """
         # Note: rel_T is the target and rel_S is the input of KL Div loss for KLDivLoss(), before softmax.
         # KLDivLoss() needs log of inputs (rel_S)
-        # Reference:
-        # (1) torch source: https://github.com/pytorch/pytorch/blob/7cc029cb75c292e93d168e117e46a681ace02e79/aten/src/ATen/native/Loss.cpp#L71
-        # (2) wikipedia: https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
         loss = 0.0
         batch_size = attention_mask.shape[0]
         seq_lengths = attention_mask.sum(-1).tolist()
         for b in range(batch_size):
             cur_seq_len = seq_lengths[b]  # current sequence length
-            # While we kind of get the same values from output.attentions from BertModel, it seems to do a weird thing by
-            # applying dropout post softmax. The paper's calculations do not apply this
             R_L_T = torch.nn.Softmax(dim=-1)(rel_T[b, :, :cur_seq_len, :cur_seq_len])
             R_M_S = torch.nn.functional.log_softmax(
                 rel_S[b, :, :cur_seq_len, :cur_seq_len], dim=-1
