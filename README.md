@@ -1,5 +1,5 @@
 # MAKD
-We provide a pytorch version implementation of the MAKD method.
+We provide a pytorch implementation of the MAKD method.
 
 # For the fine-tune of teacher the model on different datasets:
 The fine-tuned teacher model weights for different datasets are expected to be stored in different folders of Teacher_Model. Users can either fine-tune them themselves on different datasets before testing them, or using our submitted teacher model weights:https://userscloud.com/e5g1rffrq1pp. 
