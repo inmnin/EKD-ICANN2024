@@ -14,16 +14,14 @@ if __name__ == '__main__':
     #ALPHA is the loss weight corresponding to the MAKD loss in the MAKD method
     ALPHA = 5
     
-    BETA = 0
-    
-    GAMA = 0
-    
     #The train_type can be one of the following:   makd, pkd_skip, pkd_first, pkd_last, kd, baseline, tiny, minlmv1, or minlmv2
     train_type = "makd"
 
     #The datasets are of the following types:    hotel, shopping, takeaways, movie, data4
     data_set_type = "movie"
 
+    BETA = 0
+    GAMA = 0
     
     MASK_RATE = 0.5
     
