@@ -69,7 +69,6 @@ data_set_type = "movie",
     if train_type=="makd_last":
         add_loss = MAKD_loss(student_hidden_size=312, teacher_hidden_size=768, num_layers=REGRESSOER_DEPT, num_attention_heads=REGRESSOER_NUM_HEADS,
                  intermediate_size=3072, max_seq_len=MAX_SEQ_LEN, init_std=0.02)
-        RESULT_PATH = 'result/'+data_set_type+'/last_MAE/'
 
     if train_type=="pkd_skip":
         add_loss = PKD_loss(teacher_dims=teacher_model.config.hidden_size, student_dims=student_model.config.hidden_size,
