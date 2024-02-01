@@ -13,9 +13,10 @@ Our experiments were done using jupter, if you want to use jupter for your exper
 After configuring the environment, experiment with our MAKD method by following two steps
 
 # 1. Fine-tune the teacher model on different datasets:
+We provide the following two ways to fine-tune the teacher model, and we recommend the first one to use the teacher model parameters we provide directly.
 
 ## Use the weights we provide(recommended):
-If you wish to use the weights we provide, please download https://userscloud.com/fdl7079jlfk7, and then replace the original **Teacher_Model** folder with the unzipped **Teacher_Model** folder . 
+If you wish to use the weights we provide, please download https://userscloud.com/fdl7079jlfk7, and then replace the original **Teacher_Model** folder with the unzipped **Teacher_Model** folder. 
 
 ## Fine-tune the teacher model by yourself:
 If you wish to fine-tune the teacher model by yourself, the base parameters used for the teacher model are from  https://userscloud.com/v8bov5yf887d (you can also down it from https://huggingface.co/bert-base-chinese/tree/main, they are the same). After downloading, put the model weights in the Pretrained_BERT folder . Then you need to set train_set_type in finetune_teacher.py to which dataset you want to fine-tune. 
@@ -27,7 +28,6 @@ If you wish to fine-tune the teacher model by yourself, the base parameters used
 
 After setting the parameters, you can run finetune_teacher.py. The teacher's weights fine-tuned for a particular dataset will be saved in the corresponding folder Teacher_Model/xxx_Model/(xxx means data_set_type).
 
-After doing the above, you can start running the MAKD method.
 
 # 2. run MAKD method in main.py:
 In experimenting with the MAKD method, please change **train_type** to **"makd"** (or other methods of comparison), and **data_set_type** to the corresponding dataset name (movie,takeaways,data4,shopping or hotel) in main.py. Then set the epochs as **15**, and set the **ALPHA** on different datasets to the best parameters we provided: 
