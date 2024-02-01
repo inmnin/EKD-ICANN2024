@@ -13,7 +13,6 @@ Our experiments were done using jupter, if you want to use jupter for your exper
 After configuring the environment, experiment with our MAKD method by following two steps
 
 # 1. Fine-tune the teacher model on different datasets:
-The fine-tuned teacher model weights for different datasets are expected to be stored in different folders of Teacher_Model. 
 
 If you wish to use the weights we provide, please download https://userscloud.com/fdl7079jlfk7, and then replace the original **Teacher_Model** folder with the unzipped **Teacher_Model** folder **(We recommend this approach)**. 
 
