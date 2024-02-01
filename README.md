@@ -2,7 +2,7 @@
 We provide a pytorch implementation of the MAKD method.
 
 # For the data we used:
-All the datasets we have cleaned and segmented are uploaded in this project and users can find them in Data.
+All the datasets we have cleaned and segmented are uploaded in this project and users can find them in folder Data.
 
 # For the environment of the experiment:
 We saved the environment configurations used in our experiments in the requirements.txt.
