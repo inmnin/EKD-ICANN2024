@@ -23,7 +23,6 @@ If you wish to fine-tune the teacher model by yourself, firstly, please download
 
 After downloading, put the model weights in the folder Pretrained_BERT. Then you need to set train_set_type in finetune_teacher.py to which dataset you want to fine-tune. 
 ```
-    #On which dataset to fine-tune the teacher. 
     #The train_type can be taken as movie, data4, takeaways, shopping or hotel
     data_set_type = "movie"
 ```
@@ -42,10 +41,10 @@ In experimenting with the MAKD method, please change **train_type** to **"makd"*
     #ALPHA is the loss weight corresponding to the MAKD loss in the MAKD method
     ALPHA = 5
     
-    #The train_type can be one of the following:   makd, pkd_skip, kd, baseline, tiny, minlmv1, or minlmv2
+    #The train_type can be one of the following:    makd, pkd_skip, kd, baseline, tiny, minlmv1, or minlmv2
     train_type = "makd"
 
-    #The datasets are of the following types:    hotel, shopping, takeaways, movie, data4
+    #The datasets are of the following types:    movie, data4, takeaways, shopping or hotel
     data_set_type = "movie"
 ```
 After setting these parameters, you can just run main.py. Users can refer to the average of the accuracy of the predictions of the last 5 training rounds of experiments on the test set (that is, the accuracy that will be printed at runtime). 
