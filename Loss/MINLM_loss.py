@@ -146,14 +146,9 @@ class MINLMLoss(nn.Module):
         d_r_T = d_h_T // self.A_r  # teacher's relation head size
         d_r_S = d_h_S // self.A_r  # student's relation head size
 
-        # hidden_states contains L+1 elements for the teacher and M+1 elements for the student,
-        # since the first is embedding
-        # To calculate query, key, and value for the last attention layer, we get the hidden states
-        # of the second last layer (L+1 -2 = L - 1)
         hidden_L_1_T = teacher_outs.hidden_states[L - 1]
         hidden_M_1_S = student_outs.hidden_states[M - 1]
 
-        # Get relation vectors (query, key, value) of the shape (batch_size, A_r, seq_len, d_r) based on Figure 1
         relation_vectors_T = self._get_relation_vectors(
             self.teacher.bert.encoder.layer[L - 1].attention.self, hidden_L_1_T, d_r_T
         )
@@ -168,7 +163,6 @@ class MINLMLoss(nn.Module):
             # relation pair of (1,2) indicates to compute QK for teacher and student and apply loss on it
             m, n = relation_pair  # m and n are 1-indexed
 
-            # Formula (7) and (8)
             A_L_T_scaleddot = torch.matmul(
                 relation_vectors_T[m - 1], relation_vectors_T[n - 1].transpose(-1, -2)
             ) / math.sqrt(
@@ -178,13 +172,10 @@ class MINLMLoss(nn.Module):
                 relation_vectors_S[m - 1], relation_vectors_S[n - 1].transpose(-1, -2)
             ) / math.sqrt(d_r_S)
 
-            # Compute relaiton loss (Formula (6))
             l_relation = self._get_kl_loss(
                 A_L_T_scaleddot.detach(), A_M_S_scaleddot, inputs["attention_mask"]
             )
 
-            
-            # Aggregate losses (Formula (5))
             loss += weight * l_relation
 
         
