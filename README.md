@@ -4,7 +4,7 @@ We provide a pytorch implementation of the MAKD method.
 # For the fine-tune of teacher the model on different datasets:
 The fine-tuned teacher model weights for different datasets are expected to be stored in different folders of Teacher_Model. 
 
-If you wish to use the weights we provide, please download https://userscloud.com/fdl7079jlfk7, and then replace the original **Teacher_Model** folder with the unzipped **Teacher_Model** folder (We recommend this approach). 
+If you wish to use the weights we provide, please download https://userscloud.com/fdl7079jlfk7, and then replace the original **Teacher_Model** folder with the unzipped **Teacher_Model** folder (**We recommend this approach**). 
 
 If you wish to fine-tune the teacher model by yourself, the base parameters used for the teacher model are from  https://userscloud.com/v8bov5yf887d (you can also down it from https://huggingface.co/bert-base-chinese/tree/main, they are the same). After downloading, put the model weights in the Pretrained_BERT folder . Then you need to set train_set_type in finetune_teacher.py to which dataset you want to fine-tune. After setting the parameters, you can run finetune_teacher.py. The teacher's weights fine-tuned for a particular dataset will be saved in the corresponding folder Teacher_Model/xxx_Model/(xxx means data_set_type).
 ```
