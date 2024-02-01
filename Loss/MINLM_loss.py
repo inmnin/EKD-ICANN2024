@@ -191,20 +191,20 @@ class MINLMLoss(nn.Module):
                 A_L_T_scaleddot.detach(), A_M_S_scaleddot, inputs["attention_mask"]
             )
 
-            #注意力蒸馏损失
+            
             # Aggregate losses (Formula (5))
             loss += weight * l_relation
 
-        #监督损失
+        
         s_loss = student_outs.loss
         
         c_loss = 0
         if self.beta>0:
-            # 普通蒸馏损失
+            
             s_logits = student_outs.logits
             t_logits = teacher_outs.logits
 
-            KL = nn.KLDivLoss(reduction='batchmean')  # 实例化KL散度损失
+            KL = nn.KLDivLoss(reduction='batchmean')  
             t_logits_soft = F.softmax(t_logits / self.beta, dim=1)
             s_logits_soft = F.log_softmax(s_logits / self.beta, dim=1)
             c_loss = KL(s_logits_soft, t_logits_soft)*(self.beta*self.beta)
