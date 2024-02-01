@@ -27,7 +27,7 @@ In experimenting with the MAKD method, please change **train_type** to **"makd"*
 ```
 After setting these parameters, you can just run main.py. Users can refer to the average of the accuracy of the predictions of the last 5 training rounds of experiments on the test set (that is, the accuracy that will be printed at runtime). 
 
-For the data we used:
+# For the data we used:
 All the datasets we have cleaned and segmented are uploaded in this project and users can find them in Data.
 
 # For the environment of the experiment:
