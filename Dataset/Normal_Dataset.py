@@ -3,7 +3,7 @@ from torch.utils.data import Dataset
 import string
 import torch
 from transformers import BertTokenizer
-from time import sleep
+
 class Normal_dataset(Dataset):
     def __init__(self, corpus_path, seq_len, encoding="utf-8", corpus_lines=None, on_memory=True):
         self.seq_len = seq_len
