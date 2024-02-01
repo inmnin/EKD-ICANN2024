@@ -12,7 +12,7 @@ if __name__ == '__main__':
     EPOCHS = 15
 
     #ALPHA is the loss weight corresponding to the MAKD loss in the MAKD method
-    ALPHA = 0.00003
+    ALPHA = 5
     
     BETA = 0
     
@@ -22,7 +22,7 @@ if __name__ == '__main__':
     train_type = "makd"
 
     #The datasets are of the following types:    hotel, shopping, takeaways, movie, data4
-    data_set_type = "takeaways"
+    data_set_type = "movie"
 
     
     MASK_RATE = 0.5
