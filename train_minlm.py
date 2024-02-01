@@ -5,7 +5,6 @@ from tqdm import tqdm
 import torch.nn as nn
 import torch.nn.functional as F
 
-import pickle
 
 from Loss.MINLM_loss import MINLMLoss as MINLM_loss
 from Dataset.Normal_Dataset import Bert_Dataset
