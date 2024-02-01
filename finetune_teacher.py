@@ -22,7 +22,7 @@ import os
 if __name__ == '__main__':
 
     
-    #On which dataset to fine-tune the teacher. 
+    #On which dataset to fine-tune the teacher
     #The train_type can be taken as movie, data4, takeaways, shopping or hotel
     data_set_type = "movie"
     
