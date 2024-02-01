@@ -3,7 +3,7 @@ We provide a pytorch implementation of the MAKD method.
 
 # For the fine-tune of teacher the model on different datasets:
 The fine-tuned teacher model weights for different datasets are expected to be stored in different folders of Teacher_Model. Users can either fine-tune them themselves on different datasets before testing them, or using our submitted teacher model weights:https://userscloud.com/e5g1rffrq1pp. 
-If you wish to use the weights we provide, please replace the original **Teacher_Model** folder with the unzipped **Teacher_Model** folder.  
+If you wish to use the weights we provide, please replace the original **Teacher_Model** folder with the unzipped **Teacher_Model** folder (We recommend this approach).  
 If you wish to fine-tune the teacher model by yourself, the base parameters used for the teacher model are from https://huggingface.co/bert-base-chinese, You can put the model weights in the Pretrained_BERT folder after downloading them on the hugging-face platform. Then you need to set train_set_type in finetune_teacher.py to which dataset you want to fine-tune. Once this is done you can run it and the teacher model fine-tuned for a particular dataset will be used for later experiments on that dataset!
 
 After doing the above, you can start running the MAKD method.
@@ -19,7 +19,7 @@ In experimenting with the MAKD method, please change **train_type** to **"makd"*
     #ALPHA is the loss weight corresponding to the MAKD loss in the MAKD method
     ALPHA = 5
     
-    #The train_type can be one of the following:   makd, pkd_skip, pkd_first, pkd_last, kd, baseline, tiny, minlmv1, or minlmv2
+    #The train_type can be one of the following:   makd, pkd_skip, kd, baseline, tiny, minlmv1, or minlmv2
     train_type = "makd"
 
     #The datasets are of the following types:    hotel, shopping, takeaways, movie, data4
