@@ -14,9 +14,9 @@ After configuring the environment, experiment with our MAKD method by following 
 
 # 1. Fine-tune the teacher model on different datasets:
 
-If you wish to use the weights we provide, please download https://userscloud.com/fdl7079jlfk7, and then replace the original **Teacher_Model** folder with the unzipped **Teacher_Model** folder **(We recommend this approach)**. 
+## If you wish to use the weights we provide, please download https://userscloud.com/fdl7079jlfk7, and then replace the original **Teacher_Model** folder with the unzipped **Teacher_Model** folder **(We recommend this approach)**. 
 
-If you wish to fine-tune the teacher model by yourself, the base parameters used for the teacher model are from  https://userscloud.com/v8bov5yf887d (you can also down it from https://huggingface.co/bert-base-chinese/tree/main, they are the same). After downloading, put the model weights in the Pretrained_BERT folder . Then you need to set train_set_type in finetune_teacher.py to which dataset you want to fine-tune. 
+## If you wish to fine-tune the teacher model by yourself, the base parameters used for the teacher model are from  https://userscloud.com/v8bov5yf887d (you can also down it from https://huggingface.co/bert-base-chinese/tree/main, they are the same). After downloading, put the model weights in the Pretrained_BERT folder . Then you need to set train_set_type in finetune_teacher.py to which dataset you want to fine-tune. 
 ```
     #On which dataset to fine-tune the teacher. 
     #The train_type can be taken as movie, data4, takeaways, shopping or hotel
