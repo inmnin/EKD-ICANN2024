@@ -27,7 +27,8 @@ After downloading, please replace the original folder Pretrained_BERT with the u
     data_set_type = "movie"
 ```
 
-After setting the parameters, you can run finetune_teacher.py. The teacher's weights fine-tuned for a particular dataset will be saved in the corresponding folder Teacher_Model/xxx_Model/(xxx means data_set_type).
+After setting the parameters, you can run finetune_teacher.py. 
+The teacher's weights fine-tuned for a particular dataset will be saved in the corresponding folder Teacher_Model/xxx_Model/(xxx is the data_set_type you have set).
 
 
 # 2. run MAKD method in main.py:
@@ -47,5 +48,6 @@ In experimenting with the MAKD method, please change **train_type** to **"makd"*
     #The datasets are of the following types:    movie, data4, takeaways, shopping or hotel
     data_set_type = "movie"
 ```
-After setting these parameters, you can just run main.py. Users can refer to the average of the accuracy of the predictions of the last 5 training rounds of experiments on the test set (that is, the accuracy that will be printed at runtime). 
+After setting these parameters, you can just run main.py. 
+Users can refer to the average of the accuracy of the predictions of the last 5 training rounds of experiments on the test set (that is, the accuracy that will be printed at runtime). 
 
