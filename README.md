@@ -9,8 +9,23 @@ If you wish to fine-tune the teacher model by yourself, the base parameters used
 After doing the above, you can start running the MAKD method.
 
 # For run MAKD method in main.py:
-In experimenting with the MAKD method, please change **train_type** to **"makd"** (or other methods of comparison), and **data_set_type** to the corresponding dataset name (movie,takeaways,data4,shopping or hotel) in main.py. Then set the epochs as **15**, and set the **ALPHA** on different datasets to the best parameters we provided: *movie:5,waimai:3000,data4:1,shopping:2.5,hotel:0.00003*.
-Users can refer to the average of the accuracy of the predictions of the last 5 training rounds of experiments on the test set (that is, the accuracy that will be printed at runtime). 
+In experimenting with the MAKD method, please change **train_type** to **"makd"** (or other methods of comparison), and **data_set_type** to the corresponding dataset name (movie,takeaways,data4,shopping or hotel) in main.py. Then set the epochs as **15**, and set the **ALPHA** on different datasets to the best parameters we provided: 
+|movie|takeaways|data4|shopping|hotel|
+|:---|:---|:---|:---|:---|
+|5|3000|1|2.5|0.00003|
+```
+    EPOCHS = 15
+
+    #ALPHA is the loss weight corresponding to the MAKD loss in the MAKD method
+    ALPHA = 5
+    
+    #The train_type can be one of the following:   makd, pkd_skip, pkd_first, pkd_last, kd, baseline, tiny, minlmv1, or minlmv2
+    train_type = "makd"
+
+    #The datasets are of the following types:    hotel, shopping, takeaways, movie, data4
+    data_set_type = "movie"
+```
+After setting these parameters, you can just run main.py. Users can refer to the average of the accuracy of the predictions of the last 5 training rounds of experiments on the test set (that is, the accuracy that will be printed at runtime). 
 
 For the data we used:
 All the datasets we have cleaned and segmented are uploaded in this project and users can find them in Data.
