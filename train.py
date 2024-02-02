@@ -25,7 +25,7 @@ BATCH_SIZE = 32,
 LR = 0.00001,
 EPOCHS = 40,
 NUM_LABELS = 2,
-#蒸馏损失相关参数
+
 ALPHA = 0.00001,
 BETA = 0,
 GAMA = 0.3,
@@ -42,13 +42,13 @@ train_type = "makd",
 data_set_type = "movie",
 ):
     torch.cuda.empty_cache()
-    # 老师模型
+    
     print(data_set_type)
     tokenizer = BertTokenizer.from_pretrained("./Teacher_Model/"+data_set_type+"_Model/")
     teacher_model = BertForSequenceClassification.from_pretrained(
         "./Teacher_Model/"+data_set_type+"_Model/", num_labels=NUM_LABELS)
 
-    # 学生模型
+    
     student_model = BertConfig(hidden_size=312, num_hidden_layers=8,
                                num_attention_heads=4)
     student_model = BertForSequenceClassification(config=student_model)
