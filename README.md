@@ -19,11 +19,9 @@ We conduct experiments in a single GPU environment.
 Please refer to the above information to configure the environment for the experiment.
 
 ## 2. Fine-tune the teacher model on different datasets:
-We provide the following two ways to fine-tune the teacher model, and we recommend the first one to use the teacher model weights we provide directly.
-
-
-### Use the weights we provide(recommended)
-If you wish to use the weights we provide, please download **https://ufile.io/a6d9dfxs**, and then replace the original folder **Teacher_Model**  with the unzipped folder **Teacher_Model**. 
+We provide the following two ways to fine-tune the teacher model, and we recommend the first one to use the fine-tuned teacher model weights we provide directly.
+### Use the fine-tuned teacher model weights we provide(recommended)
+If you wish to use the fine-tuned teacher model weights we provide, please download **https://ufile.io/a6d9dfxs**, and then replace the original folder **Teacher_Model**  with the unzipped folder **Teacher_Model**. 
 
 ### Fine-tune the teacher model by yourself
 If you wish to fine-tune the teacher model by yourself, firstly, please download the base parameters used for the teacher model from **https://ufile.io/iv2e19xd**. (It is the same as *https://huggingface.co/bert-base-chinese/tree/main*. However, the original repository lacks maintenance, which might causes some problems when running. So we have made a copy of the model's parameters available for download*) 
@@ -34,7 +32,7 @@ After downloading, please replace the original folder Pretrained_BERT with the u
     data_set_type = "movie"
 ```
 
-After setting the parameters, you can run finetune_teacher.py. 
+After setting the parameters, you can run finetune_teacher.py to get the teacher model fine-tuned on this dataset. 
 
 
 ## 3. run MAKD method in main.py:
