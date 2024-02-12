@@ -2,13 +2,12 @@
 We provide a pytorch implementation of the MAKD method.
 
 # For the data we used:
-All the datasets we have cleaned and segmented are uploaded in this project and users can find them in folder Data.
+All the datasets we have cleaned and segmented are uploaded in this project and users can find them in folder **Data**.
 
 # For the environment of the experiment:
 We saved the environment configurations used in our experiments in the requirements.txt.
 
-We record the configuration of the devices we used in our experiment as follows for users' reference: RTX 4090(24GB) * 1,12 vCPU Intel(R) Xeon(R) Platinum 8352V CPU @ 2.10GHz. 
-Our experiments were done using jupter, if you want to use jupter for your experiments, please create a .ipynb file in the root directory and copy all the contents of main.py or finetune_teacher.py into it and run this ipynb file.
+We record the configuration of the devices we used in our experiment as follows for users' reference: RTX 4090(24GB) * 1,12 vCPU Intel(R) Xeon(R) Platinum 8352V CPU @ 2.10GHz. We conduct experiments in a single GPU environment.
 
 After configuring the environment, experiment with our MAKD method by following two steps
 
