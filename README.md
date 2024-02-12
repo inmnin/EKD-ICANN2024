@@ -7,10 +7,11 @@ All the datasets we have cleaned and segmented are uploaded in this project and 
 # For the environment of the experiment:
 We saved the environment configurations used in our experiments in the requirements.txt.
 
-We record the configuration of the devices we used in our experiment as follows for users' reference: RTX 4090(24GB) * 1,12 vCPU Intel(R) Xeon(R) Platinum 8352V CPU @ 2.10GHz. We conduct experiments in a single GPU environment.
+We record the configuration of the devices we used in our experiment as follows for users' reference: RTX 4090(24GB) * 1,12 vCPU Intel(R) Xeon(R) Platinum 8352V CPU @ 2.10GHz.
+We conduct experiments in a single GPU environment.
+
 
 After configuring the environment, experiment with our MAKD method by following two steps
-
 # 1. Fine-tune the teacher model on different datasets:
 The base teacher model weights in this experiment are from *https://huggingface.co/bert-base-chinese/tree/main*. We fine-tuned this base model on different datasets independently.
 The teacher's weights fine-tuned for a particular dataset will be saved in the corresponding folder Teacher_Model/xxx_Model/(xxx is the name of dataset).
