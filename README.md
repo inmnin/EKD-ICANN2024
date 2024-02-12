@@ -37,7 +37,9 @@ After downloading, please replace the original folder `Pretrained_BERT` in the r
 
 After setting the parameters, you can run `finetune_teacher.py`. 
 
-The teacher's weights fine-tuned for a particular dataset will be saved in the folder `Teacher_Model/xxx_Model/`(xxx is the data_set_type you have set).
+You need to run `finetune_teacher.py` multiple times, setting a different `data_set_type` each time, to obtain the corresponding fine-tuned teacher model weights for all datasets.
+
+The teacher's weights fine-tuned for a particular dataset will be saved in the folder `Teacher_Model/xxx_Model/`(xxx is the data_set_type you have set). 
 
 
 ## 3. Run MAKD method in main.py:
