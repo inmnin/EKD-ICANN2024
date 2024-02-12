@@ -8,13 +8,14 @@ from train_minlm import train_minlm
 if __name__ == '__main__':
     """
     """
-
-
+    
+    #The datasets are of the following types:    movie, data4, takeaways, shopping or hotel
+    data_set_type = "movie"
+    
     #ALPHA is the loss weight corresponding to the MAKD loss in the MAKD method
     ALPHA = 5
 
-    #The datasets are of the following types:    movie, data4, takeaways, shopping or hotel
-    data_set_type = "movie"
+
 
     #The train_type can be one of the following:    makd, makd_first, makd_last, pkd_skip, kd, baseline, tiny, minlmv1, or minlmv2
     train_type = "makd"
