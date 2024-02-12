@@ -29,21 +29,21 @@ If you wish to use the fine-tuned teacher model weights we provide, please downl
 ### Fine-tune the teacher model by yourself (unrecommended)
 If you wish to fine-tune the teacher model by yourself, firstly, please download the base parameters used for the teacher model from **https://ufile.io/iv2e19xd**. (It is the same as *https://huggingface.co/bert-base-chinese/tree/main*. However, the original repository lacks maintenance, which might causes some problems when running. So we have made a copy of the model's weights available for download) 
 
-After downloading, please replace the original folder Pretrained_BERT with the unzipped folder Pretrained_BERT. Then you need to set train_set_type in finetune_teacher.py to which dataset you want to fine-tune. 
+After downloading, please replace the original folder `Pretrained_BERT` with the unzipped folder `Pretrained_BERT`. Then you need to set train_set_type in `finetune_teacher.py` to which dataset you want to fine-tune. 
 ```
     #The train_type can be taken as movie, data4, takeaways, shopping or hotel
     data_set_type = "movie"
 ```
 
-After setting the parameters, you can run finetune_teacher.py. 
+After setting the parameters, you can run `finetune_teacher.py`. 
 
-The teacher's weights fine-tuned for a particular dataset will be saved in the folder Teacher_Model/xxx_Model/(xxx is the data_set_type you have set).
+The teacher's weights fine-tuned for a particular dataset will be saved in the folder `Teacher_Model/xxx_Model/`(xxx is the data_set_type you have set).
 
 
 ## 3. Run MAKD method in main.py:
-In **main.py**, please set **data_set_type** to the dataset name (movie,takeaways,data4,shopping or hotel). 
+In `main.py`, please set `data_set_type` to the dataset name (movie,takeaways,data4,shopping or hotel). 
 
-Then set **ALPHA** according to the **data_set_type** based on the table below: 
+Then set `ALPHA` according to the `data_set_type` based on the table below: 
 |data_set_type:|movie|takeaways|data4|shopping|hotel|
 |:---|:---|:---|:---|:---|:---|
 |**ALPHA:**|5|3000|1|2.5|0.00003|
@@ -57,7 +57,7 @@ Then set **ALPHA** according to the **data_set_type** based on the table below:
 ```
 *ps: these ALPHA values are the optimal hyperparameters we found through search on different datasets.*
 
-After setting these parameters, you can just run main.py. 
+After setting these parameters, you can just run `main.py`. 
 
 Users can refer to the average accuracy of the predictions on the test set in the last 5 epoch. 
 
