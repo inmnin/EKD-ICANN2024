@@ -13,6 +13,7 @@ The teacher's weights fine-tuned for a particular dataset will be saved in the c
 We saved the environment configurations used in our experiments in the requirements.txt.
 
 We record the configuration of the devices we used in our experiment as follows for users' reference: RTX 4090(24GB) * 1,12 vCPU Intel(R) Xeon(R) Platinum 8352V CPU @ 2.10GHz.
+
 We conduct experiments in a single GPU environment.
 
 Please refer to the above information to configure the environment for the experiment
