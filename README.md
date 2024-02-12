@@ -20,7 +20,7 @@ Please refer to the above information to configure the environment for the exper
 ## 2. Fine-tune the teacher model on different datasets:
 We provide the following two ways to fine-tune the teacher model.
 
-In order to better reproduce the experimental results, we recommend that you choose the first way to directly use the fine-tuned teacher model weights provided by us.
+In order to better reproduce the experimental results, **we recommend that you choose the first way to directly use the fine-tuned teacher model weights provided by us**.
 
 ### Use the fine-tuned teacher model weights we provide (recommended)
 If you wish to use the fine-tuned teacher model weights we provide, please download **https://ufile.io/a6d9dfxs**, and then replace the original folder `Teacher_Model` in the root directory with the unzipped folder `Teacher_Model`. Once that's done you can move on to the next step: *"3. run MAKD method in main.py"*.
