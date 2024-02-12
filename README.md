@@ -13,7 +13,7 @@ Our experiments were done using jupter, if you want to use jupter for your exper
 After configuring the environment, experiment with our MAKD method by following two steps
 
 # 1. Fine-tune the teacher model on different datasets:
-The base teacher model weights in this experiment are from *https://huggingface.co/bert-base-chinese/tree/main*. We fine-tuned this base model on each of the different datasets. 
+The base teacher model weights in this experiment are from *https://huggingface.co/bert-base-chinese/tree/main*. We fine-tuned this base model on different datasets independently.
 The teacher's weights fine-tuned for a particular dataset will be saved in the corresponding folder Teacher_Model/xxx_Model/(xxx is the name of dataset).
 
 We provide the following two ways to fine-tune the teacher model, and we recommend the first one to use the teacher model weights we provide directly.
