@@ -17,8 +17,6 @@ We conduct experiments in a single GPU environment.
 
 Please refer to the above information to configure the environment for the experiment
 
-After configuring the environment, experiment with our MAKD method by following two steps
-
 ## 2. Fine-tune the teacher model on different datasets:
 We provide the following two ways to fine-tune the teacher model, and we recommend the first one to use the teacher model weights we provide directly.
 
