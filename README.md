@@ -44,7 +44,7 @@ The teacher's weights fine-tuned for a particular dataset will be saved in the f
 ## 3. run MAKD method in main.py:
 In **main.py**, please set **data_set_type** to the dataset name (movie,takeaways,data4,shopping or hotel). 
 
-Then set **ALPHA** according to the data_set_type based on the table below: 
+Then set **ALPHA** according to the **data_set_type** based on the table below: 
 |data_set_type:|movie|takeaways|data4|shopping|hotel|
 |:---|:---|:---|:---|:---|:---|
 |**ALPHA:**|5|3000|1|2.5|0.00003|
