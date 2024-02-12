@@ -34,11 +34,11 @@ After downloading, please replace the original folder Pretrained_BERT with the u
 
 After setting the parameters, you can run finetune_teacher.py to get the teacher model fine-tuned on this dataset. 
 
-The teacher's weights fine-tuned for a particular dataset will be saved in the corresponding folder Teacher_Model/xxx_Model/(xxx is the data_set_type you have set).
+The teacher's weights fine-tuned for a particular dataset will be saved in the folder Teacher_Model/xxx_Model/(xxx is the data_set_type you have set).
 
 
 ## 3. run MAKD method in main.py:
-In experimenting with the MAKD method, please set **data_set_type** to the corresponding dataset name (movie,takeaways,data4,shopping or hotel) in main.py. Then set the **ALPHA** on different datasets to the best parameters we provided: 
+In experimenting with the MAKD method, please set **data_set_type** to the dataset name (movie,takeaways,data4,shopping or hotel) in main.py, and then set **ALPHA** to the best parameter of the corresponding dataset based on the table below: 
 |data_set_type:|movie|takeaways|data4|shopping|hotel|
 |:---|:---|:---|:---|:---|:---|
 |**ALPHA:**|5|3000|1|2.5|0.00003|
