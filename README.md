@@ -5,7 +5,7 @@ We provide a pytorch implementation of the MAKD method.
 All the datasets we have cleaned and segmented are uploaded in this project and users can find them in folder **Data**.
 # For the teacher model weights we used:
 The base teacher model weights in this experiment are from *https://huggingface.co/bert-base-chinese/tree/main*. We fine-tuned this base model on different datasets independently.
-The teacher's weights fine-tuned for a particular dataset is saved in the corresponding folder **Teacher_Model/xxx_Model/**(xxx is the name of dataset).
+The teacher model's weights fine-tuned for a particular dataset corresponds to the folder **Teacher_Model/xxx_Model/**(xxx is the name of dataset).
 
 
 # MAKD in 3 steps
