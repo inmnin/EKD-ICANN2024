@@ -5,7 +5,7 @@ All the datasets we have cleaned and segmented are uploaded in this project and 
 ## for the teacher model weights we used:
 In this experiment, we adopt the base teacher model weights from *https://huggingface.co/bert-base-chinese/tree/main*, and fine-tune them on each dataset independently.
 
-The teacher model's weights fine-tuned for a particular dataset corresponds to the folder `Teacher_Model/xxx_Model/`(xxx is the name of dataset).
+The teacher model's weights fine-tuned for a particular dataset corresponds to the folder `Teacher_Model/xxx_Model/`(xxx is the name of dataset).  
 
 
 # MAKD in 3 steps
