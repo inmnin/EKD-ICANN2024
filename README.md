@@ -24,7 +24,7 @@ We provide the following two ways to fine-tune the teacher model, and we recomme
 If you wish to use the fine-tuned teacher model weights we provide, please download **https://ufile.io/a6d9dfxs**, and then replace the original folder **Teacher_Model**  with the unzipped folder **Teacher_Model**. 
 
 ### Fine-tune the teacher model by yourself
-If you wish to fine-tune the teacher model by yourself, firstly, please download the base parameters used for the teacher model from **https://ufile.io/iv2e19xd**. (It is the same as *https://huggingface.co/bert-base-chinese/tree/main*. However, the original repository lacks maintenance, which might causes some problems when running. So we have made a copy of the model's parameters available for download*) 
+If you wish to fine-tune the teacher model by yourself, firstly, please download the base parameters used for the teacher model from **https://ufile.io/iv2e19xd**. (It is the same as *https://huggingface.co/bert-base-chinese/tree/main*. However, the original repository lacks maintenance, which might causes some problems when running. So we have made a copy of the model's parameters available for download) 
 
 After downloading, please replace the original folder Pretrained_BERT with the unzipped folder Pretrained_BERT. Then you need to set train_set_type in finetune_teacher.py to which dataset you want to fine-tune. 
 ```
@@ -32,7 +32,7 @@ After downloading, please replace the original folder Pretrained_BERT with the u
     data_set_type = "movie"
 ```
 
-After setting the parameters, you can run finetune_teacher.py to get the teacher model fine-tuned on this dataset. 
+After setting the parameters, you can run finetune_teacher.py to get the teacher model fine-tuned on this dataset. The teacher's weights fine-tuned for a particular dataset will be saved in the corresponding folder Teacher_Model/xxx_Model/(xxx is the data_set_type you have set).
 
 
 ## 3. run MAKD method in main.py:
