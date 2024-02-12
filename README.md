@@ -1,8 +1,8 @@
-# introduction
+# Introduction
 We provide a pytorch implementation of the MAKD method.
-## For the data we used:
+## for the data we used:
 All the datasets we have cleaned and segmented are uploaded in this project and users can find them in folder **Data**.
-## For the teacher model weights we used:
+## for the teacher model weights we used:
 The base teacher model weights in this experiment are from *https://huggingface.co/bert-base-chinese/tree/main*. We fine-tuned this base model on different datasets independently.
 The teacher model's weights fine-tuned for a particular dataset corresponds to the folder **Teacher_Model/xxx_Model/**(xxx is the name of dataset).
 
@@ -40,7 +40,7 @@ After setting the parameters, you can run finetune_teacher.py.
 The teacher's weights fine-tuned for a particular dataset will be saved in the folder Teacher_Model/xxx_Model/(xxx is the data_set_type you have set).
 
 
-## 3. run MAKD method in main.py:
+## 3. Run MAKD method in main.py:
 In **main.py**, please set **data_set_type** to the dataset name (movie,takeaways,data4,shopping or hotel). 
 
 Then set **ALPHA** according to the **data_set_type** based on the table below: 
