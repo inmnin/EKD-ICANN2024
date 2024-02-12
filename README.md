@@ -31,9 +31,6 @@ If you wish to fine-tune the teacher model by yourself, firstly, please download
 
 After downloading, please replace the original folder Pretrained_BERT with the unzipped folder Pretrained_BERT. Then you need to set train_set_type in finetune_teacher.py to which dataset you want to fine-tune. 
 ```
-    #finetune_teacher.py
-
-
     #The train_type can be taken as movie, data4, takeaways, shopping or hotel
     data_set_type = "movie"
 ```
@@ -51,9 +48,6 @@ Then set **ALPHA** according to the **data_set_type** based on the table below:
 |:---|:---|:---|:---|:---|:---|
 |**ALPHA:**|5|3000|1|2.5|0.00003|
 ```
-    #main.py
-
-
     #The datasets are of the following types:    movie, data4, takeaways, shopping or hotel
     data_set_type = "movie"
     
