@@ -49,7 +49,7 @@ Then set **ALPHA** according to the **data_set_type** based on the table below:
 |:---|:---|:---|:---|:---|:---|
 |**ALPHA:**|5|3000|1|2.5|0.00003|
 
-ps: these are the optimal hyperparameters we found through search on different datasets.
+ps: these ALPHA values are the optimal hyperparameters we found through search on different datasets.
 ```
     #The datasets are of the following types:    movie, data4, takeaways, shopping or hotel
     data_set_type = "movie"
