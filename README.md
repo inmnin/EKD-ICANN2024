@@ -26,7 +26,7 @@ In order to better reproduce the experimental results, **we recommend that you c
 ### Use the fine-tuned teacher model weights we provide (recommended)
 If you wish to use the fine-tuned teacher model weights we provide, please download **https://ufile.io/a6d9dfxs**, and then replace the original folder `Teacher_Model` in the root directory with the unzipped folder `Teacher_Model`. 
 
-**Once these's done you can move on to the next step: *"3. run MAKD method in main.py"***.
+**After replacement, you can move on to the next step: *"3. run MAKD method in main.py"***.
 
 
 ### Fine-tune the teacher model by yourself (unrecommended)
