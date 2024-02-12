@@ -36,7 +36,7 @@ After downloading, please replace the original folder Pretrained_BERT with the u
     data_set_type = "movie"
 ```
 
-After setting the parameters, you can run finetune_teacher.py to get the teacher model fine-tuned on this dataset. 
+After setting the parameters, you can run finetune_teacher.py. 
 
 The teacher's weights fine-tuned for a particular dataset will be saved in the folder Teacher_Model/xxx_Model/(xxx is the data_set_type you have set).
 
