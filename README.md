@@ -8,7 +8,7 @@ The base teacher model weights in this experiment are from *https://huggingface.
 The teacher's weights fine-tuned for a particular dataset will be saved in the corresponding folder **Teacher_Model/xxx_Model/**(xxx is the name of dataset).
 
 
-# MAKD experiments in 3 steps
+# MAKD in 3 steps
 ## 1.Configuring the Experimental Environment
 We saved the environment configurations used in our experiments in the requirements.txt.
 
