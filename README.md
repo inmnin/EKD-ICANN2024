@@ -47,8 +47,6 @@ Then set **ALPHA** according to the **data_set_type** based on the table below:
 |data_set_type:|movie|takeaways|data4|shopping|hotel|
 |:---|:---|:---|:---|:---|:---|
 |**ALPHA:**|5|3000|1|2.5|0.00003|
-
-ps: these ALPHA values are the optimal hyperparameters we found through search on different datasets.
 ```
     #The datasets are of the following types:    movie, data4, takeaways, shopping or hotel
     data_set_type = "movie"
@@ -57,7 +55,7 @@ ps: these ALPHA values are the optimal hyperparameters we found through search o
     ALPHA = 5
 
 ```
-
+*ps: these ALPHA values are the optimal hyperparameters we found through search on different datasets.*
 
 After setting these parameters, you can just run main.py. 
 
