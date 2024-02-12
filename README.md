@@ -9,7 +9,7 @@ The teacher model's weights fine-tuned for a particular dataset corresponds to t
 
 # MAKD in 3 steps
 ## 1.Configuring the Experimental Environment
-We saved the environment configurations used in our experiments in the requirements.txt.
+We saved the environment configurations used in our experiments in the `requirements.txt`.
 
 We record the configuration of the devices we used in our experiment as follows for users' reference: RTX 4090(24GB) * 1, 12 vCPU Intel(R) Xeon(R) Platinum 8352V CPU @ 2.10GHz.
 
