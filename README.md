@@ -24,7 +24,7 @@ We provide the following two ways to fine-tune the teacher model.
 ### Use the fine-tuned teacher model weights we provide (recommended)
 If you wish to use the fine-tuned teacher model weights we provide, please download **https://ufile.io/a6d9dfxs**, and then replace the original folder **Teacher_Model**  with the unzipped folder **Teacher_Model**. 
 
-Using the model weights we provide will help you replicate our experimental results.
+Using the model weights we provide will help you replicate our experimental results, so we recommend using the weights we provide directly.
 
 
 ### Fine-tune the teacher model by yourself (unrecommended)
