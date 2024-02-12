@@ -16,7 +16,7 @@ We record the configuration of the devices we used in our experiment as follows 
 
 We conduct experiments in a single GPU environment.
 
-Please refer to the above information to configure the environment for the experiment
+Please refer to the above information to configure the environment for the experiment.
 
 ## 2. Fine-tune the teacher model on different datasets:
 We provide the following two ways to fine-tune the teacher model, and we recommend the first one to use the teacher model weights we provide directly.
