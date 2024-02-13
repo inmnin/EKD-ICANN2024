@@ -60,7 +60,6 @@ Then set `ALPHA` according to the `data_set_type` based on the table below:
     ALPHA = 5
 
 ```
-*ps: these ALPHA values are the optimal hyperparameters we found through search on different datasets.*
 
 After setting these parameters, you can just run `main.py`. 
 
