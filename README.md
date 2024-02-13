@@ -1,15 +1,9 @@
 # Introduction
 We provide a pytorch implementation of the MAKD method.
-## for the data we used:
+## for the data:
 All the datasets we have cleaned and segmented are uploaded in this project and users can find them in folder `Data`.
-## for the teacher model weights we used:
-In this experiment, we adopt *bert-base-chinese* (*https://huggingface.co/bert-base-chinese/tree/main*) as the base teacher model weights, and fine-tune them on each dataset independently.
-
+## for the teacher model weights:
 The teacher model's weights fine-tuned for a particular dataset corresponds to the folder `Teacher_Model/xxx_Model/`(xxx is the name of dataset).  
-
-
-
-  
 
 # MAKD in 3 steps
 ## 1.Configuring the Experimental Environment
@@ -33,7 +27,7 @@ If you wish to use the fine-tuned teacher model weights we provide, please downl
 
 
 ### Fine-tune the teacher model by yourself (unrecommended)
-If you wish to fine-tune the teacher model by yourself, firstly, please download the base teacher model weights from **https://ufile.io/iv2e19xd**. (It is the same as *bert-base-chinese*. However, the bert-base-chinese repository lacks maintenance, which might causes some problems when downloading. So we have made a copy of the base teacher model weights available for download) 
+If you wish to fine-tune the teacher model by yourself, firstly, please download the base teacher model weights from **https://ufile.io/iv2e19xd**. 
 
 After downloading, please replace the original folder `Pretrained_BERT` in the root directory with the unzipped folder `Pretrained_BERT`. Then you need to set `train_set_type` in `finetune_teacher.py` to which dataset you want to fine-tune (movie, takeaways, data4, shopping or hotel). 
 ```
