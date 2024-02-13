@@ -14,7 +14,7 @@ In the experiment, we used a single RTX 4090 (24GB) GPU.
 Please refer to the above information to configure the environment for the experiment.  
   
 ## 2. Acquire the fine-tuned teacher model weights:
-We provide the following two ways to acquire the fine-tuned teacher model weights.
+We provide the following two ways to acquire the teacher model weights fine-tuned on each dataset.
 
 In order to better reproduce the experimental results, **we recommend that you choose the first way to directly use the fine-tuned teacher model weights provided by us**.
 
