@@ -6,7 +6,7 @@ All the datasets we have cleaned and segmented are uploaded in this project and 
 The teacher model's weights fine-tuned for a particular dataset corresponds to the folder `Teacher_Model/xxx_Model/`(xxx is the name of dataset).  
 
 # MAKD in 3 steps
-## 1.Configuring the Experimental Environment
+## 1.Configuring the Experimental Environment:
 We saved the environment configurations used in our experiments in the `requirements.txt`.
 
 In the experiment, we used a single RTX 4090 (24GB) GPU.
