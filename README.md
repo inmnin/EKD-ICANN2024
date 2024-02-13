@@ -48,7 +48,7 @@ After setting the parameters, you can run `finetune_teacher.py`.
 
 To ensure you obtain the fine-tuned teacher model weights for all datasets, you need to run `finetune_teacher.py` multiple times, each time setting a different `data_set_type`, covering all types(movie, takeaways, data4, shopping and hotel).
 
-The teacher's weights fine-tuned for a particular dataset will be saved in the folder `Teacher_Model/xxx_Model/`(xxx is the data_set_type you have set). 
+The teacher's weights fine-tuned for a particular dataset will be saved in the folder `Teacher_Model/xxx_Model/`(xxx is the `data_set_type` you have set). 
 
 
 ## 3. Run MAKD method in main.py:
