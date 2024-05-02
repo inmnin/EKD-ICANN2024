@@ -1,7 +1,7 @@
 # Introduction
 We provide a pytorch implementation of the EKD method.
 ## for the data:
-All the datasets we have cleaned and segmented are uploaded in this project and users can find them in folder `Data`.
+lease download the dataset from the following address:**https://ufile.io/n3a8vbzg**, and replace the `Data` folder in your project with the `Data` folder after extraction. 
 ## for the teacher model weights:
 The teacher model's weights fine-tuned for a particular dataset corresponds to the folder `Teacher_Model/xxx_Model/`(xxx is the name of dataset).  
 
