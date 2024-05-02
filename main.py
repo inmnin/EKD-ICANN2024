@@ -12,13 +12,13 @@ if __name__ == '__main__':
     #The datasets are of the following types:    movie, data4, takeaways, shopping or hotel
     data_set_type = "movie"
     
-    #ALPHA is the loss weight corresponding to the MAKD loss in the MAKD method
+    #ALPHA is the loss weight corresponding to the ekd loss in the ekd method
     ALPHA = 5
 
 
 
-    #The train_type can be one of the following:    makd, makd_first, makd_last, pkd_skip, kd, baseline, tiny, minlmv1, or minlmv2
-    train_type = "makd"
+    #The train_type can be one of the following:    ekd, ekd_first, ekd_last, pkd_skip, kd, baseline, tiny, minlmv1, or minlmv2
+    train_type = "ekd"
 
     EPOCHS = 15
     BETA = 0
