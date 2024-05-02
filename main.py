@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
 
 
-    #The train_type can be one of the following:    ekd, ekd_first, ekd_last, pkd_skip, kd, baseline, tiny, minlmv1, or minlmv2
+    #The train_type can be one of the following:    ekd, ekd_first, ekd_last
     train_type = "ekd"
 
     EPOCHS = 15
