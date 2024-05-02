@@ -1,11 +1,11 @@
 # Introduction
-We provide a pytorch implementation of the MAKD method.
+We provide a pytorch implementation of the EKD method.
 ## for the data:
 All the datasets we have cleaned and segmented are uploaded in this project and users can find them in folder `Data`.
 ## for the teacher model weights:
 The teacher model's weights fine-tuned for a particular dataset corresponds to the folder `Teacher_Model/xxx_Model/`(xxx is the name of dataset).  
 
-# MAKD in 3 steps
+# EKD in 3 steps
 ## 1.Configuring the Experimental Environment:
 We saved the environment configurations used in our experiments in the `requirements.txt`.
 
@@ -19,7 +19,7 @@ We provide the following two ways to acquire the teacher model weights fine-tune
 In order to better reproduce the experimental results, **we recommend that you choose the first way to directly use the fine-tuned teacher model weights provided by us**.
 
 ### Use the fine-tuned teacher model weights we provide (recommended)
-If you wish to use the fine-tuned teacher model weights we provide, please download **https://ufile.io/a6d9dfxs**, and then replace the original folder `Teacher_Model` in the root directory with the unzipped folder `Teacher_Model`.     **After the replacement is completed, you can move on to the next step: *"3. run MAKD method in main.py"***.
+If you wish to use the fine-tuned teacher model weights we provide, please download **https://ufile.io/a6d9dfxs**, and then replace the original folder `Teacher_Model` in the root directory with the unzipped folder `Teacher_Model`.     **After the replacement is completed, you can move on to the next step: *"3. run EKD method in main.py"***.
 
 
 ### Fine-tune the teacher model by yourself (unrecommended)
@@ -41,7 +41,7 @@ To ensure you obtain the fine-tuned teacher model weights for all datasets, you 
 The teacher's weights fine-tuned for a particular dataset will be saved in the folder `Teacher_Model/xxx_Model/`(xxx is the `data_set_type` you have set). 
 
 
-## 3. Run MAKD method in main.py:
+## 3. Run EKD method in main.py:
 In `main.py`, please set `data_set_type` to the dataset name (movie, takeaways, data4, shopping or hotel). 
 
 Then set `ALPHA` according to the `data_set_type` based on the table below: 
@@ -52,7 +52,7 @@ Then set `ALPHA` according to the `data_set_type` based on the table below:
     #The datasets are of the following types:    movie, data4, takeaways, shopping or hotel
     data_set_type = "movie"
     
-    #ALPHA is the loss weight corresponding to the MAKD loss in the MAKD method
+    #ALPHA is the loss weight corresponding to the EKD loss in the EKD method
     ALPHA = 5
 
 ```
