@@ -55,37 +55,19 @@ if __name__ == '__main__':
     torch.backends.cudnn.deterministic = True
 
     #train
-    if train_type == "minlmv1" or train_type == "minlmv2":
-        train_minlm(
-            MAX_SEQ_LEN = MAX_SEQ_LEN,
-            BATCH_SIZE = BATCH_SIZE,
-            LR = LR,
-            EPOCHS = EPOCHS,
-            NUM_LABELS = NUM_LABELS,
-            ALPHA = ALPHA,
-            BETA = BETA,
-            GAMA = GAMA,
-            MASK_RATE = MASK_RATE,
-            REGRESSOER_DEPT = REGRESSOER_DEPT,
-            REGRESSOER_NUM_HEADS = REGRESSOER_NUM_HEADS,
-            T_KD_LAYERS = T_KD_LAYERS,
-            S_KD_LAYERS = S_KD_LAYERS,
-            train_type = train_type,
-            data_set_type = data_set_type)
-    else:  
-        train(
-            MAX_SEQ_LEN = MAX_SEQ_LEN,
-            BATCH_SIZE = BATCH_SIZE,
-            LR = LR,
-            EPOCHS = EPOCHS,
-            NUM_LABELS = NUM_LABELS,
-            ALPHA = ALPHA,
-            BETA = BETA,
-            GAMA = GAMA,
-            MASK_RATE = MASK_RATE,
-            REGRESSOER_DEPT = REGRESSOER_DEPT,
-            REGRESSOER_NUM_HEADS = REGRESSOER_NUM_HEADS,
-            T_KD_LAYERS = T_KD_LAYERS,
-            S_KD_LAYERS = S_KD_LAYERS,
-            train_type = train_type,
-            data_set_type = data_set_type)
+    train(
+        MAX_SEQ_LEN = MAX_SEQ_LEN,
+        BATCH_SIZE = BATCH_SIZE,
+        LR = LR,
+        EPOCHS = EPOCHS,
+        NUM_LABELS = NUM_LABELS,
+        ALPHA = ALPHA,
+        BETA = BETA,
+        GAMA = GAMA,
+        MASK_RATE = MASK_RATE,
+        REGRESSOER_DEPT = REGRESSOER_DEPT,
+        REGRESSOER_NUM_HEADS = REGRESSOER_NUM_HEADS,
+        T_KD_LAYERS = T_KD_LAYERS,
+        S_KD_LAYERS = S_KD_LAYERS,
+        train_type = train_type,
+        data_set_type = data_set_type)
