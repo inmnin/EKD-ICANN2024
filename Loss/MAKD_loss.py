@@ -8,9 +8,9 @@ def trunc_normal_(tensor, mean=0., std=1.):
     __call_trunc_normal_(tensor, mean=mean, std=std, a=-std, b=std)
 
 
-class MAKDTransformerLayer(nn.Module):
+class EKDTransformerLayer(nn.Module):
     def __init__(self, hidden_size, num_attention_heads, intermediate_size):
-        super(MAKDTransformerLayer, self).__init__()
+        super(EKDTransformerLayer, self).__init__()
         self.self_attn = nn.MultiheadAttention(hidden_size, num_attention_heads)
         self.intermediate = nn.Linear(hidden_size, intermediate_size)
         self.output = nn.Linear(intermediate_size, hidden_size)
@@ -29,14 +29,14 @@ class MAKDTransformerLayer(nn.Module):
         return out2
 
 
-class MAKDLoss(nn.Module):
+class EKDLoss(nn.Module):
     def __init__(self, student_hidden_size=312, teacher_hidden_size=768, num_layers=3, num_attention_heads=8,
                  intermediate_size=3072, max_seq_len=200, init_std=0.02):
-        super(MAKDLoss, self).__init__()
+        super(EKDLoss, self).__init__()
 
         self.align_student = nn.Linear(student_hidden_size, teacher_hidden_size)
         self.layers = nn.ModuleList(
-            [MAKDTransformerLayer(teacher_hidden_size, num_attention_heads, intermediate_size) for _ in
+            [EKDTransformerLayer(teacher_hidden_size, num_attention_heads, intermediate_size) for _ in
              range(num_layers)])
         self.loss_mse = nn.MSELoss()
         self.position_embeddings = nn.Embedding(512, teacher_hidden_size)  # Assuming a maximum length of 512
