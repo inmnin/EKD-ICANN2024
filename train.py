@@ -69,27 +69,6 @@ data_set_type = "movie",
     if train_type=="ekd_last":
         add_loss = ekd_loss(student_hidden_size=312, teacher_hidden_size=768, num_layers=REGRESSOER_DEPT, num_attention_heads=REGRESSOER_NUM_HEADS,
                  intermediate_size=3072, max_seq_len=MAX_SEQ_LEN, init_std=0.02)
-
-    if train_type=="pkd_skip":
-        add_loss = PKD_loss(teacher_dims=teacher_model.config.hidden_size, student_dims=student_model.config.hidden_size,
-                            student_mim_layers=S_KD_LAYERS,teacher_mim_layers=T_KD_LAYERS)
-
-    if train_type =="kd":
-        add_loss = PKD_loss(teacher_dims=teacher_model.config.hidden_size, student_dims=student_model.config.hidden_size,
-                            student_mim_layers=S_KD_LAYERS,teacher_mim_layers=T_KD_LAYERS)
-
-    if train_type=="baseline":
-        add_loss = PKD_loss(teacher_dims=teacher_model.config.hidden_size, student_dims=student_model.config.hidden_size,
-                            student_mim_layers=S_KD_LAYERS,teacher_mim_layers=T_KD_LAYERS)
-
-    if train_type=="tiny":
-        add_loss = TINY_loss(teacher_dims=teacher_model.config.hidden_size, student_dims=student_model.config.hidden_size,
-                             student_mim_layers=S_KD_LAYERS, teacher_mim_layers=T_KD_LAYERS)
-
-        # Ensure that the model outputs an attention matrix
-        student_model.config.output_attentions = True
-        teacher_model.config.output_attentions = True
-
         
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     student_model = student_model.to(device)
@@ -154,44 +133,9 @@ data_set_type = "movie",
                 s_hidden_states = [student_output.hidden_states[i] for i in S_last_layers]
                 t_hidden_states = [teacher_output.hidden_states[i] for i in T_last_layers]
                 c_loss += add_loss(s_hidden_states, t_hidden_states, position_ids=pos_embed[:MAX_SEQ_LEN,:])
-            
-            elif train_type == "pkd_skip":
-                s_logits = student_output.logits
-                t_logits = teacher_output.logits
-                
-                t_logits_soft = F.softmax(t_logits / BETA, dim=1)
-                s_logits_soft = F.log_softmax(s_logits / BETA, dim=1)
-                c_loss = KL(s_logits_soft, t_logits_soft)*(BETA*BETA)
-                
-                kd_loss += add_loss(student_output.hidden_states,teacher_output.hidden_states)
-
-            elif train_type =="kd":
-                s_logits = student_output.logits
-                t_logits = teacher_output.logits
-                
-                t_logits_soft = F.softmax(t_logits / BETA, dim=1)
-                s_logits_soft = F.log_softmax(s_logits / BETA, dim=1)
-                c_loss = KL(s_logits_soft, t_logits_soft)*(BETA*BETA)
-                
-            elif train_type=="tiny":
-                kd_loss = add_loss(student_output.hidden_states,
-                                    teacher_output.hidden_states,
-                                    student_output.attentions,
-                                    teacher_output.attentions
-                                    )
-                s_logits = student_output.logits
-                t_logits = teacher_output.logits
-
-                t_logits_soft = F.softmax(t_logits / BETA, dim=1)
-                s_logits_soft = F.log_softmax(s_logits / BETA, dim=1)
-                c_loss = KL(s_logits_soft, t_logits_soft) * (BETA * BETA)
-            else:
-                c_loss = 0
+        
             
             loss = student_output.loss
-            
-            if train_type == "kd" or train_type == "pkd_skip" or train_type=="tiny":
-                loss = loss*(1 - ALPHA)
             
             loss += ALPHA * c_loss + GAMA * kd_loss
 
