@@ -11,8 +11,7 @@ import os
 
 from Dataset.Normal_Dataset import Bert_Dataset
 from Loss.ekd_loss import ekdLoss as ekd_loss
-from Loss.PKD_loss import PKDLoss as PKD_loss
-from Loss.TINY_loss import TINYLoss as TINY_loss
+
 
 
 
