@@ -10,7 +10,7 @@ import random
 import os
 
 from Dataset.Normal_Dataset import Bert_Dataset
-from Loss.MAKD_loss import MAKDLoss as MAKD_loss
+from Loss.ekd_loss import ekdLoss as ekd_loss
 from Loss.PKD_loss import PKDLoss as PKD_loss
 from Loss.TINY_loss import TINYLoss as TINY_loss
 
@@ -38,7 +38,7 @@ S_first_layers = [0, 1, 2, 3, 4],
 T_first_layers = [0, 1, 2, 3, 4],
 S_last_layers = [4, 5, 6, 7, 8],
 T_last_layers = [8,9,10,11,12],
-train_type = "makd",
+train_type = "ekd",
 data_set_type = "movie",
 ):
     torch.cuda.empty_cache()
@@ -58,16 +58,16 @@ data_set_type = "movie",
 
     add_loss = None
 
-    if train_type=="makd":
-        add_loss = MAKD_loss(student_hidden_size=312, teacher_hidden_size=768, num_layers=REGRESSOER_DEPT, num_attention_heads=REGRESSOER_NUM_HEADS,
+    if train_type=="ekd":
+        add_loss = ekd_loss(student_hidden_size=312, teacher_hidden_size=768, num_layers=REGRESSOER_DEPT, num_attention_heads=REGRESSOER_NUM_HEADS,
                  intermediate_size=3072, max_seq_len=MAX_SEQ_LEN, init_std=0.02)
         
-    if train_type=="makd_first":
-        add_loss = MAKD_loss(student_hidden_size=312, teacher_hidden_size=768, num_layers=REGRESSOER_DEPT, num_attention_heads=REGRESSOER_NUM_HEADS,
+    if train_type=="ekd_first":
+        add_loss = ekd_loss(student_hidden_size=312, teacher_hidden_size=768, num_layers=REGRESSOER_DEPT, num_attention_heads=REGRESSOER_NUM_HEADS,
                  intermediate_size=3072, max_seq_len=MAX_SEQ_LEN, init_std=0.02)
 
-    if train_type=="makd_last":
-        add_loss = MAKD_loss(student_hidden_size=312, teacher_hidden_size=768, num_layers=REGRESSOER_DEPT, num_attention_heads=REGRESSOER_NUM_HEADS,
+    if train_type=="ekd_last":
+        add_loss = ekd_loss(student_hidden_size=312, teacher_hidden_size=768, num_layers=REGRESSOER_DEPT, num_attention_heads=REGRESSOER_NUM_HEADS,
                  intermediate_size=3072, max_seq_len=MAX_SEQ_LEN, init_std=0.02)
 
     if train_type=="pkd_skip":
@@ -141,16 +141,16 @@ data_set_type = "movie",
             c_loss = 0
             kd_loss = 0
 
-            if train_type =="makd":
+            if train_type =="ekd":
                 s_hidden_states = [student_output.hidden_states[i] for i in S_KD_LAYERS]
                 t_hidden_states = [teacher_output.hidden_states[i] for i in T_KD_LAYERS]
                 c_loss += add_loss(s_hidden_states, t_hidden_states,position_ids=pos_embed[:MAX_SEQ_LEN,:])
 
-            elif train_type =="makd_first":
+            elif train_type =="ekd_first":
                 s_hidden_states = [student_output.hidden_states[i] for i in S_first_layers]
                 t_hidden_states = [teacher_output.hidden_states[i] for i in T_first_layers]
                 c_loss += add_loss(s_hidden_states, t_hidden_states, position_ids=pos_embed[:MAX_SEQ_LEN,:])
-            elif train_type =="makd_last":
+            elif train_type =="ekd_last":
                 s_hidden_states = [student_output.hidden_states[i] for i in S_last_layers]
                 t_hidden_states = [teacher_output.hidden_states[i] for i in T_last_layers]
                 c_loss += add_loss(s_hidden_states, t_hidden_states, position_ids=pos_embed[:MAX_SEQ_LEN,:])
