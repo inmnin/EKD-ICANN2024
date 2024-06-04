@@ -1,3 +1,5 @@
+# status of paper
+The paper has been acceptted by ICANN2024.
 # Introduction
 We provide a pytorch implementation of the EKD method.
 ## for the data:
