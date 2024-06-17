@@ -1,7 +1,7 @@
 # status of paper
-The paper has been acceptted by ICANN2024.
+The paper has been acceptted by **ICANN2024**.
 # Introduction
-We provide a pytorch implementation of the EKD method.
+We provide a pytorch implementation of the **Efficient Knowledge Distillation(EKD)** method.
 ## for the data:
 lease download the dataset from the following address: **https://ufile.io/n3a8vbzg**, and replace the `Data` folder in your project with the `Data` folder after extraction. 
 ## for the teacher model weights:
